@@ -20,4 +20,25 @@ public sealed class StateMachine
         Current = next;
         Current?.Enter();
     }
+
+    public void OnEnable()
+    {
+        Current?.Enter();
+    }
+
+    public void OnDisable()
+    {
+        Current?.Exit();
+    }
+
+    public void Update()
+    {
+        Current?.Update();
+    }
+    
+
+    public void FixedUpdate()
+    {
+        Current?.FixedUpdate();
+    }
 }

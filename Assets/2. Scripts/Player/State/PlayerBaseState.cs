@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class PlayerBaseState : IState
 {
+    public StateMachine stateMachine;
+    
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -9,6 +12,7 @@ public class PlayerBaseState : IState
     }
 
     // Update is called once per frame
+    
     public void Enter()
     {
         throw new System.NotImplementedException();
