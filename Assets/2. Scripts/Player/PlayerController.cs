@@ -4,13 +4,19 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    public StateMachine stateMachine;
-    public InputSystem_Actions actions;
+    public StateMachine stateMachine { get; private set; }
+    private InputSystem_Actions actions;
+    public PlayerStateSO model;
+    public PlayerAnimate view;
 
-    void Awake()
+    // 이니셜라이즈
+    public void Initialize(PlayerStateSO model, InputSystem_Actions action,PlayerAnimate view)
     {
+        this.model = model;
+        this.actions = actions;
+        this.view = view;
+        
         stateMachine = new StateMachine();
-        actions = new InputSystem_Actions();
         stateMachine.ChangeState(new PlayerIdleState(this));
     }
 
@@ -26,6 +32,16 @@ public class PlayerController : MonoBehaviour
 
     void HandleInput()
     {
-        stateMachine.ChangeState(new PlayerWalkState());
+        Vector2 move = actions.Player.Move.ReadValue<Vector2>();
+        bool run = actions.Player.Run.IsPressed();
+        
+        if(move ==  Vector2.zero)
+            stateMachine.ChangeState(new PlayerIdleState(this));
+        else if(run)
+            stateMachine.ChangeState(new PlayerRunState(this));
+        else
+            stateMachine.ChangeState(new PlayerWalkState(this));
+        
+            
     }
 }

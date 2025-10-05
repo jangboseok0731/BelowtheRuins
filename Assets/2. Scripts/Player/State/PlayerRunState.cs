@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class PlayerRunState : IState
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    PlayerController _controller;
+    public PlayerRunState(PlayerController controller)
+    {
+        this._controller = controller;
+    }
     void Start()
     {
         

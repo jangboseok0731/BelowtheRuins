@@ -2,13 +2,18 @@ using UnityEngine;
 
 public class PlayerIdleState : IState
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private PlayerController _controller;
+
+    public PlayerIdleState(PlayerController controller)
+    {
+        this._controller = controller;
+    }
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+    
     public void Enter()
     {
         throw new System.NotImplementedException();

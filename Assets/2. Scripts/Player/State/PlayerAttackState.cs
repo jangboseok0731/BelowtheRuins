@@ -2,7 +2,12 @@ using UnityEngine;
 
 public class PlayerAttackState : IState
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    PlayerController _controller;
+
+    public PlayerAttackState(PlayerController controller)
+    {
+        this._controller = controller;
+    }
     void Start()
     {
         
@@ -18,6 +23,7 @@ public class PlayerAttackState : IState
     {
         Update();
     }
+    
 
     public void FixedUpdate()
     {

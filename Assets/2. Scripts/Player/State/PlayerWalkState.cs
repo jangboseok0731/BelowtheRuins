@@ -2,16 +2,15 @@ using UnityEngine;
 
 public class PlayerWalkState : IState
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    PlayerController _controller;
+    public PlayerWalkState(PlayerController controller)
     {
-        
+        this._controller =  controller;
     }
-
+    
     // Update is called once per frame
     public void Enter()
     {
-        throw new System.NotImplementedException();
     }
 
     void IState.Update()
