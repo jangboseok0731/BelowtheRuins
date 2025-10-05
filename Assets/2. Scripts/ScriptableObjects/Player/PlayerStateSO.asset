@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: PlayerStateSO
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStateSO
   <PlayerCondition>k__BackingField:
-    <MaxHp>k__BackingField: 0
+    <MaxHp>k__BackingField: 100
   <PlayerMovment>k__BackingField:
     <Speed>k__BackingField: 0
