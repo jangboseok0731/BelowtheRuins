@@ -15,7 +15,7 @@ public class PlayerRunState : IState
     // Update is called once per frame
     public void Enter()
     {
-        throw new System.NotImplementedException();
+        
     }
 
     void IState.Update()
@@ -25,12 +25,10 @@ public class PlayerRunState : IState
 
     public void FixedUpdate()
     {
-        throw new System.NotImplementedException();
     }
 
     public void Exit()
     {
-        throw new System.NotImplementedException();
     }
 
     void Update()

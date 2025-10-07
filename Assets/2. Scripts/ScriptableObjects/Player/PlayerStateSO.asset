@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be55ac938581456469d62dc1fb68d2fa, type: 3}
   m_Name: PlayerStateSO
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStateSO
-  <PlayerCondition>k__BackingField:
-    <MaxHp>k__BackingField: 100
-  <PlayerMovment>k__BackingField:
-    <Speed>k__BackingField: 0
+  playerCondition:
+    <MaxHp>k__BackingField: 0
+  playerMovment:
+    <Speed>k__BackingField: 10

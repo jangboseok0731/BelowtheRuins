@@ -37,7 +37,6 @@ public sealed class StateMachine
         Current?.Update();
     }
     
-
     public void FixedUpdate()
     {
         Current?.FixedUpdate();

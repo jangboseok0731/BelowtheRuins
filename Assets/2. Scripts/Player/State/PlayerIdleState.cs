@@ -12,30 +12,21 @@ public class PlayerIdleState : IState
     {
         
     }
-
-    
     public void Enter()
     {
-        throw new System.NotImplementedException();
     }
+    
+    public void FixedUpdate() { }
 
-    void IState.Update()
-    {
-        Update();
-    }
+    public void Exit() { }
 
-    public void FixedUpdate()
+    public void Update()
     {
-        throw new System.NotImplementedException();
-    }
-
-    public void Exit()
-    {
-        throw new System.NotImplementedException();
-    }
-
-    void Update()
-    {
-        
+        Vector2 move = _controller.actions.Player.Move.ReadValue<Vector2>();
+        if (move != Vector2.zero)
+        {
+            Debug.Log("PlayerWalkState");
+            _controller.stateMachine.ChangeState(new PlayerWalkState(_controller));
+        }
     }
 }
